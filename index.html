@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock paper sissors</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <section class="main">
+            <div class="main-wrp">
+                <div class="scoreCard">
+                    <h1 class="scoreCard-text">
+                        ROCK <br>
+                        PAPER <br>
+                        SCISSORS
+                    </h1>
+                    <div class="score-display">
+                        <div class="score-box">
+                            <h3 class="scoreBox-text">
+                                Computer <br>Score
+                            </h3>
+                            <h1 class="scoreBox-score" id="computerScore">
+                                0
+                            </h1>
+                        </div>
+                        <div class="score-box">
+                            <h3 class="scoreBox-text">
+                                Your<br> Score
+                            </h3>
+                            <h1 class="scoreBox-score" id="userScore">
+                                0
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <section class="game-interface">
+                   <div class="game-wrp">
+                        <button class="circle rock" value="rock">
+                            <img src="./assets/rock.svg" alt="rock">
+                        </button>
+                        <hr class="line top-line">
+                        <button class="circle paper" value="paper">
+                            <img src="./assets/paper.svg" alt="paper">
+                        </button>
+                        <hr class="line left-line">
+                        <hr class="line right-line">
+                        <button class="circle sissors" value="sissors">
+                            <img src="./assets/sissors.svg" alt="sissors">
+                        </button>
+                   </div>
+                </section>
+                <div class="rules-menu hidden">
+                    <button class="rules-close">
+                        X
+                    </button>
+                    <h1>Game Rules</h1>
+                    <ul class="rules-list">
+                        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                            <li>If both players lay down the same hand, each player lays down another hand</li>
+                    </ul>
+                </div>
+                <button class="rules-btn">
+                    Rules
+                </button>
+                <a href="./pages/aplause.html"> <button class="next-btn hidden-btn">
+                  Next
+                </button></a>
+            </div>
+        </section>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
