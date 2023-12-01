@@ -1,6 +1,9 @@
 const toggleRulesBtn = document.querySelector('.rules-btn')
 const closeRulesBtn = document.querySelector('.rules-close')
+const applauseToggleBtn = document.querySelector('.applause-rules-btn')
+const applauseCloseRulesBtn = document.querySelector('.applause-rules-close')
 const rulesMenu = document.querySelector('.rules-menu')
+const applauseRulesMenu = document.querySelector('.applause-rules-menu')
 const gameBtn = document.querySelectorAll('.circle')
 const nextBtn = document.querySelector('.next-btn')
 
@@ -68,63 +71,37 @@ if (computerScore && userScore) {
 const gameInterface = document.querySelector('.game-interface')
 
 const resultScreen = (user, pc, winner) => {
-  let resultHtml = ''
-  if (winner === 'draw') {
-    resultHtml = `<div class="result-wrp">
-      <div class="user">
-        <h3 class="user-selection">YOU PICKED</h3>
-        <button class="circle middle ${user}">
-          <img src="../assets/${user}.svg" alt="">
-        </button>
-      </div>
-      <div class="result-text-tie">
-        <h1>TIE UP</h1>
-        <button class="play-again">
-          REPLAY
-        </button>
-      </div>
-      <div class="computer">
-        <h3 class="pc-selection">PC PICKED</h3>
-        <button class="circle center ${pc}">
-          <img src="../assets/${pc}.svg" alt="">
-        </button>
-      </div>
-    </div>`
-  } else {
-    let addUserHtml = `<div class="ellipse"></div>
-      <div class="ellipse-2"></div>
-      <div class="ellipse-3"></div>`
-    let addComputerHtml = `<div class="ellipse-computer"></div>
-      <div class="ellipse-2-computer"></div>
-      <div class="ellipse-3-computer"></div>`
-    resultHtml = `<div class="result-wrp">
-        <div class="user">
-          <h3 class="user-selection">YOU PICKED</h3>
-          ${winner === 'user' ? addUserHtml : ''}
-          <button class="circle middle ${user}">
+    resultHtml =  `<div class="game-wrp-next">
+    <div class="user">
+         <h3>YOU PICKED</h3>
+        ${winner === 'user' ? `<div class="eclipse3"></div>
+        <div class="eclipse2"></div>
+        <div class="eclipse1"></div>`: ''}
+        <button class="circle center ${user}">
             <img src="../assets/${user}.svg" alt="">
-          </button>
-        </div>
-        <div class="${winner === 'computer'? 'result-text-computer' : 'result-text'}">
-          <h1>
-            YOU ${winner === 'user' ? 'WIN' : 'LOST'}
+        </button>
+    </div>
+    <div class="result-text">
+            ${winner === 'draw' ? `<h1>TIE UP</h1>`: `<h1>
+            YOU ${winner === 'user' ?'WIN' : 'LOST'}
           </h1>
           <h3>
             AGAINST PC
-          </h3>
-          <button class="play-again">
-            PLAY AGAIN
-          </button>
-        </div>
-        <div class="computer">
-          <h3 class="pc-selection">PC PICKED</h3>
-          ${winner === 'computer' ? addComputerHtml : ''}
-          <button class="circle center ${pc}">
+          </h3>`}
+            <button class="play-again">
+              ${winner === 'draw'? 'REPLAY' : 'PLAY AGAIN'}
+            </button>
+    </div>
+    <div class="computer">
+         <h3>PC PICKED</h3>
+         ${winner === 'computer'? `<div class="eclipse3"></div>
+         <div class="eclipse2"></div>
+         <div class="eclipse1"></div>`: ''}
+        <button class="circle middle ${pc}">
             <img src="../assets/${pc}.svg" alt="">
-          </button>
-        </div>
-      </div>`
-  }
+        </button>
+    </div>
+</div>`
 
   if (resultHtml !== '') {
     gameInterface.innerHTML = resultHtml
@@ -146,13 +123,24 @@ const playAgainHandler = () => {
 }
 
 // Toggle functionalities
-toggleRulesBtn.addEventListener('click', () => {
-  rulesMenu.classList.remove('hidden')
-})
+if (toggleRulesBtn && closeRulesBtn) {
+  toggleRulesBtn.addEventListener('click', () => {
+    rulesMenu.classList.remove('hidden')
+  })
 
-closeRulesBtn.addEventListener('click', () => {
-  rulesMenu.classList.add('hidden')
-})
+  closeRulesBtn.addEventListener('click', () => {
+    rulesMenu.classList.add('hidden')
+  })
+} else if (applauseToggleBtn && applauseCloseRulesBtn) {
+  applauseToggleBtn.addEventListener('click', () => {
+    applauseRulesMenu.classList.remove('hidden')
+  })
+
+  applauseCloseRulesBtn.addEventListener('click', () => {
+    applauseRulesMenu.classList.add('hidden')
+  })
+}
+
 
 const nextToggle = () => {
   nextBtn.classList.remove('hidden-btn')
