@@ -123,6 +123,7 @@ const playAgainHandler = () => {
 }
 
 // Toggle functionalities
+
 if (toggleRulesBtn && closeRulesBtn) {
   toggleRulesBtn.addEventListener('click', () => {
     rulesMenu.classList.remove('hidden')
@@ -131,7 +132,8 @@ if (toggleRulesBtn && closeRulesBtn) {
   closeRulesBtn.addEventListener('click', () => {
     rulesMenu.classList.add('hidden')
   })
-} else if (applauseToggleBtn && applauseCloseRulesBtn) {
+}
+ else if (applauseToggleBtn && applauseCloseRulesBtn) {
   applauseToggleBtn.addEventListener('click', () => {
     applauseRulesMenu.classList.remove('hidden')
   })

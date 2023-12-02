@@ -88,9 +88,9 @@ body {
 }
 
 .game-interface {
-    width: 60%;
+    width: 50rem;
     margin: auto;
-    position: relative;
+    /* position: relative; */
 }
 
 .game-wrp {
